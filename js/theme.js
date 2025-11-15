@@ -93,210 +93,39 @@
   /*  Google map js
     /*----------------------------------------------------*/
 
+  // Initialize Leaflet Map (OpenStreetMap - Free Forever, No API Key Required)
   if ($("#mapBox").length) {
     var $lat = $("#mapBox").data("lat");
     var $lon = $("#mapBox").data("lon");
-    var $zoom = $("#mapBox").data("zoom");
-    var $marker = $("#mapBox").data("marker");
+    var $zoom = $("#mapBox").data("zoom") || 13;
     var $info = $("#mapBox").data("info");
     var $markerLat = $("#mapBox").data("mlat");
     var $markerLon = $("#mapBox").data("mlon");
-    var map = new GMaps({
-      el: "#mapBox",
-      lat: $lat,
-      lng: $lon,
-      scrollwheel: false,
-      scaleControl: true,
-      streetViewControl: false,
-      panControl: true,
-      disableDoubleClickZoom: true,
-      mapTypeControl: false,
-      zoom: $zoom,
-      styles: [
-        {
-          featureType: "water",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#dcdfe6"
-            }
-          ]
-        },
-        {
-          featureType: "transit",
-          stylers: [
-            {
-              color: "#808080"
-            },
-            {
-              visibility: "off"
-            }
-          ]
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              visibility: "on"
-            },
-            {
-              color: "#dcdfe6"
-            }
-          ]
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#ffffff"
-            }
-          ]
-        },
-        {
-          featureType: "road.local",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              visibility: "on"
-            },
-            {
-              color: "#ffffff"
-            },
-            {
-              weight: 1.8
-            }
-          ]
-        },
-        {
-          featureType: "road.local",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              color: "#d7d7d7"
-            }
-          ]
-        },
-        {
-          featureType: "poi",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              visibility: "on"
-            },
-            {
-              color: "#ebebeb"
-            }
-          ]
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#a7a7a7"
-            }
-          ]
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#ffffff"
-            }
-          ]
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#ffffff"
-            }
-          ]
-        },
-        {
-          featureType: "landscape",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              visibility: "on"
-            },
-            {
-              color: "#efefef"
-            }
-          ]
-        },
-        {
-          featureType: "road",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#696969"
-            }
-          ]
-        },
-        {
-          featureType: "administrative",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              visibility: "on"
-            },
-            {
-              color: "#737373"
-            }
-          ]
-        },
-        {
-          featureType: "poi",
-          elementType: "labels.icon",
-          stylers: [
-            {
-              visibility: "off"
-            }
-          ]
-        },
-        {
-          featureType: "poi",
-          elementType: "labels",
-          stylers: [
-            {
-              visibility: "off"
-            }
-          ]
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              color: "#d6d6d6"
-            }
-          ]
-        },
-        {
-          featureType: "road",
-          elementType: "labels.icon",
-          stylers: [
-            {
-              visibility: "off"
-            }
-          ]
-        },
-        {},
-        {
-          featureType: "poi",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#dadada"
-            }
-          ]
-        }
-      ]
-    });
+    
+    // Use marker coordinates if provided, otherwise use map center
+    var markerLat = $markerLat || $lat;
+    var markerLon = $markerLon || $lon;
+    
+    // Initialize the map
+    var map = L.map('mapBox').setView([$lat, $lon], $zoom);
+    
+    // Add OpenStreetMap tile layer (completely free, no API key needed)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+    
+    // Add marker if coordinates are provided
+    if (markerLat && markerLon) {
+      var marker = L.marker([markerLat, markerLon]).addTo(map);
+      
+      // Add popup with info if provided
+      if ($info) {
+        marker.bindPopup($info).openPopup();
+      }
+    }
+    
+    // Disable scroll wheel zoom (optional - similar to original Google Maps setting)
+    map.scrollWheelZoom.disable();
   }
 })(jQuery);

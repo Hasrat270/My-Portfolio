@@ -20,63 +20,86 @@ $(document).ready(function(){
                     required: true,
                     minlength: 4
                 },
-                number: {
-                    required: true,
-                    minlength: 5
-                },
                 email: {
                     required: true,
                     email: true
                 },
                 message: {
                     required: true,
-                    minlength: 20
+                    minlength: 10
                 }
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Please enter your name",
+                    minlength: "Your name must consist of at least 2 characters"
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
-                },
-                number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                    required: "Please enter a subject",
+                    minlength: "Your subject must consist of at least 4 characters"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Please enter your email address",
+                    email: "Please enter a valid email address"
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "Please enter your message",
+                    minlength: "Your message must be at least 10 characters long"
                 }
             },
             submitHandler: function(form) {
-                $(form).ajaxSubmit({
-                    type:"POST",
-                    data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
-                        $('#contactForm :input').attr('disabled', 'disabled');
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $(this).find(':input').attr('disabled', 'disabled');
-                            $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#success').modal('show');
-                        })
-                    },
-                    error: function() {
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $('#error').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#error').modal('show');
-                        })
-                    }
-                })
+                // Get form values
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var subject = $('#subject').val();
+                var message = $('#message').val();
+                
+                // Format message for WhatsApp
+                var whatsappMessage = `*New Contact Form Submission*\n\n` +
+                    `*Name:* ${name}\n` +
+                    `*Email:* ${email}\n` +
+                    `*Subject:* ${subject}\n\n` +
+                    `*Message:*\n${message}`;
+                
+                // Encode message for URL
+                var encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // WhatsApp number (from index.html)
+                var whatsappNumber = '923082841437';
+                
+                // Create WhatsApp URL
+                var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                // Open WhatsApp in same window (reuses existing WhatsApp window if already open)
+                var whatsappWindow = window.open(whatsappUrl, 'whatsappWindow');
+                
+                // If window was blocked or closed, try opening in new tab
+                if (!whatsappWindow || whatsappWindow.closed || typeof whatsappWindow.closed == 'undefined') {
+                    window.open(whatsappUrl, '_blank');
+                } else {
+                    // Focus the existing window
+                    whatsappWindow.focus();
+                }
+                
+                // Show success message
+                $('#contactForm :input').attr('disabled', 'disabled');
+                $('#contactForm').fadeTo("slow", 1, function() {
+                    $(this).find(':input').attr('disabled', 'disabled');
+                    $(this).find('label').css('cursor','default');
+                    $('#success').fadeIn();
+                    $('.modal').modal('hide');
+                    $('#success').modal('show');
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(function() {
+                        $('#contactForm')[0].reset();
+                        $('#contactForm :input').attr('disabled', false);
+                        $('#success').modal('hide');
+                    }, 3000);
+                });
+                
+                // Prevent default form submission
+                return false;
             }
         })
     })

@@ -19,6 +19,164 @@
 	<link rel="stylesheet" href="vendors/flaticon/flaticon.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
+	<style>
+		/* Project Proposal Form Wrapper Styling - Glassmorphism */
+		.proposal-form-container {
+			background: rgba(255, 255, 255, 0.15) !important;
+			backdrop-filter: blur(10px) !important;
+			-webkit-backdrop-filter: blur(10px) !important;
+			border: none;
+			border-radius: 12px !important;
+			padding: 30px !important;
+			box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2) !important;
+			max-width: 600px !important;
+			margin: 0 auto !important;
+		}
+
+		.proposal-form-container .widget_title {
+			color: #667eea !important;
+			font-size: 22px !important;
+			font-weight: 700 !important;
+			margin-bottom: 15px !important;
+			text-align: center !important;
+		}
+
+		.proposal-form-container>p {
+			color: #555 !important;
+			font-size: 14px !important;
+			margin-bottom: 25px !important;
+			line-height: 1.6 !important;
+			text-align: center !important;
+		}
+
+		.proposal-form-container .text-bottom {
+			color: #999 !important;
+			margin-top: 15px !important;
+			text-align: center !important;
+		}
+
+		.proposal-form-container .br {
+			display: none !important;
+		}
+
+		/* Project Proposal Form - Nice Select Styling */
+		#projectProposalForm .nice-select {
+			background-color: #a7a1a1 !important;
+			border: none;
+			color: #999 !important;
+			font-weight: 500 !important;
+			height: 44px !important;
+			line-height: 24px !important;
+			border-radius: 4px !important;
+			padding-left: 14px !important;
+			padding-right: 40px !important;
+			width: 100% !important;
+			display: block !important;
+			float: none !important;
+			box-sizing: border-box !important;
+		}
+
+		#projectProposalForm .nice-select::after {
+			border: none;
+			border-right: 2px solid #667eea !important;
+			right: 12px !important;
+			top: 50% !important;
+		}
+
+		#projectProposalForm .nice-select:hover {
+			border: none;
+			background-color: #c5bfbf !important;
+		}
+
+		#projectProposalForm .nice-select.open,
+		#projectProposalForm .nice-select:focus {
+			border: none;
+			box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+			background-color: #f0f5ff !important;
+		}
+
+		#projectProposalForm .nice-select .list {
+			background-color: #c5bfbf !important;
+			border: none;
+			border-top: none !important;
+			max-height: 300px !important;
+			width: 100% !important;
+			left: 0 !important;
+			right: 0 !important;
+			box-sizing: border-box !important;
+			overflow-y: auto !important;
+			overflow-x: hidden !important;
+			scrollbar-width: none !important;
+			-ms-overflow-style: none !important;
+		}
+
+		#projectProposalForm .nice-select .list:focus {
+			background-color: #c5bfbf !important;
+
+		}
+
+		#projectProposalForm .nice-select .list::-webkit-scrollbar {
+			display: none !important;
+		}
+
+		#projectProposalForm .nice-select .option {
+			color: #222 !important;
+			padding: 12px 14px !important;
+			border: none;
+		}
+
+		#projectProposalForm .nice-select .option:hover {
+			background-color: #9b9898 !important;
+			color: #ffffff !important;
+			font-weight: 500;
+		}
+
+		#projectProposalForm .nice-select .option.selected {
+			background-color: #667eea !important;
+			color: #fff !important;
+		}
+
+		#projectProposalForm .form-control {
+			background-color: #c5bfbf !important;
+			border: none;
+			color: #222 !important;
+			height: 44px !important;
+			padding: 10px 14px !important;
+			font-size: 14px !important;
+			border-radius: 4px !important;
+			transition: all 0.3s ease !important;
+		}
+
+		#projectProposalForm .form-control:focus {
+			background-color: #aca7a7 !important;
+			border: none;
+			box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+			color: #222 !important;
+		}
+
+		#projectProposalForm textarea.form-control {
+			height: auto !important;
+			min-height: 100px !important;
+			resize: vertical !important;
+		}
+
+		#projectProposalForm .bbtns {
+			background-color: #667eea !important;
+			color: #fff !important;
+			border: none;
+			padding: 12px 30px !important;
+			font-weight: 600 !important;
+			border-radius: 4px !important;
+			transition: all 0.3s ease !important;
+			width: 100% !important;
+			cursor: pointer !important;
+		}
+
+		#projectProposalForm .bbtns:hover {
+			background-color: #5568d3 !important;
+			border-color: none;
+		}
+	</style>
 </head>
 
 <body>
@@ -378,50 +536,64 @@
 	</div>
 	<!--================ End Testimonial Area =================-->
 
-	<!--================ Start Newsletter Area =================-->
-	<section class="section_gap newsletter-area">
+	<!--================ Start Project Proposal Area =================-->
+	<section class="section_gap newsletter-area proposal-area">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-6 text-center">
-					<div class="main-title">
-						<h1>Join Our Newsletter</h1>
-						<p>If you are looking at blank cassettes on the web, you may be very confused at the difference
-							in price. You may
-							see some for as low as $.17 each.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row newsletter_form justify-content-center">
-				<div class="col-lg-6 col-md-6 col-sm-6">
-					<div class="d-flex flex-row" id="mc_embed_signup">
-						<form class="w-100" novalidate="true"
-							action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-							method="get">
-							<div class="navbar-form">
-								<div class="input-group add-on">
-									<input class="form-control" name="EMAIL" placeholder="Your email address"
-										onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
-										required="" type="email">
-									<div style="position: absolute; left: -5000px;">
-										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-											type="text">
-									</div>
-									<div class="input-group-btn">
-										<button class="genric-btn text-uppercase">
-											Subscribe
-										</button>
-									</div>
-								</div>
+				<div class="col-lg-8">
+					<aside class="proposal-form-container">
+						<h4 class="widget_title">Get Your Project Done</h4>
+						<p>
+							Have a project in mind? Share your project details and let's discuss how we can bring your
+							vision to life. I'm ready to turn your ideas into reality!
+						</p>
+						<form id="projectProposalForm" style="margin-bottom: 20px;">
+							<div class="form-group" style="margin-bottom: 16px;">
+								<input type="text" class="form-control" id="projectName" placeholder="Project Name"
+									required>
 							</div>
-							<div class="info mt-20"></div>
+							<div class="form-group" style="margin-bottom: 16px;">
+								<input type="email" class="form-control" id="projectEmail" placeholder="Your Email"
+									required>
+							</div>
+							<div class="form-group" style="margin-bottom: 16px;">
+								<textarea class="form-control" id="projectDescription" placeholder="Project Description"
+									rows="3" required></textarea>
+							</div>
+							<div class="form-group" style="margin-bottom: 16px;">
+								<select class="form-control" id="projectTimeline" required>
+									<option value="">Select Timeline</option>
+									<option value="ASAP">ASAP (1-2 weeks)</option>
+									<option value="1-month">1 Month</option>
+									<option value="2-3-months">2-3 Months</option>
+									<option value="3-6-months">3-6 Months</option>
+									<option value="6-months">6+ Months</option>
+								</select>
+							</div>
+							<div class="form-group" style="margin-bottom: 16px;">
+								<select class="form-control" id="projectBudget" required>
+									<option value="">Select Budget Range</option>
+									<option value="<1k">Less than $1k</option>
+									<option value="1k-5k">$1k - $5k</option>
+									<option value="5k-10k">$5k - $10k</option>
+									<option value="10k-25k">$10k - $25k</option>
+									<option value=">25k">$25k+</option>
+								</select>
+							</div>
+							<div class="form-group" style="margin-bottom: 16px;">
+								<input type="text" class="form-control" id="projectPhone"
+									placeholder="Phone Number (Optional)">
+							</div>
+							<button type="submit" class="bbtns" style="width: 100%; border: 2px solid #667eea;">Send
+								Proposal</button>
 						</form>
-
-					</div>
+						<p class="text-bottom" style="font-size: 12px;">I'll get back to you within 24 hours</p>
+					</aside>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--================ End Newsletter Area =================-->
+	<!--================ End Project Proposal Area =================>
 
 	<!--================ Start Footer Area =================-->
 	<footer class="footer_area section_gap">
@@ -436,10 +608,16 @@
 							<h4>Follow Me</h4>
 						</div>
 						<ul class="list">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance"></i></a></li>
+							<li><a href="https://www.facebook.com/hasrat.khan.35513" target="_blank"><i
+										class="fa fa-facebook"></i></a></li>
+							<li><a href="https://x.com/Hasrat09042872" target="_blank"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li><a href="https://www.instagram.com/hasrat_afridi_3701/" target="_blank"><i
+										class="fa fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/hasrat3701/" target="_blank"><i
+										class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/Hasrat270" target="_blank"><i class="fa fa-github"></i></a>
+							</li>
 						</ul>
 					</aside>
 					<div class="copyright">
@@ -469,6 +647,7 @@
 	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
 	<script src="js/jquery.ajaxchimp.min.js"></script>
 	<script src="js/mail-script.js"></script>
+	<script src="js/project-proposal.js"></script>
 	<!--gmaps Js-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>

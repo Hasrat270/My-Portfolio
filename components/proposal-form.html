@@ -1,0 +1,43 @@
+<!-- Project Proposal Form Component -->
+<div class="proposal-form-wrapper">
+    <h4 class="widget_title">Project Proposal</h4>
+    <p>
+        Have a project in mind? Share your project details and let's discuss how we can bring your vision to life.
+    </p>
+    <form id="projectProposalForm" style="margin-bottom: 20px;">
+        <div class="form-group" style="margin-bottom: 16px;">
+            <input type="text" class="form-control" id="projectName" placeholder="Project Name" required style="background:#f8f9fa; border:2px solid #667eea; color:#222;">
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+            <input type="email" class="form-control" id="projectEmail" placeholder="Your Email" required style="background:#f8f9fa; border:2px solid #667eea; color:#222;">
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+            <textarea class="form-control" id="projectDescription" placeholder="Project Description" rows="3" required style="background:#f8f9fa; border:2px solid #667eea; color:#222;"></textarea>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+            <select class="form-control" id="projectTimeline" required>
+                <option value="">Select Timeline</option>
+                <option value="ASAP">ASAP (1-2 weeks)</option>
+                <option value="1-month">1 Month</option>
+                <option value="2-3-months">2-3 Months</option>
+                <option value="3-6-months">3-6 Months</option>
+                <option value="6-months">6+ Months</option>
+            </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+            <select class="form-control" id="projectBudget" required>
+                <option value="">Select Budget Range</option>
+                <option value="<1k">Less than $1k</option>
+                <option value="1k-5k">$1k - $5k</option>
+                <option value="5k-10k">$5k - $10k</option>
+                <option value="10k-25k">$10k - $25k</option>
+                <option value=">25k">$25k+</option>
+            </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+            <input type="text" class="form-control" id="projectPhone" placeholder="Phone Number (Optional)" style="background:#f8f9fa; border:2px solid #667eea; color:#222;">
+        </div>
+        <button type="submit" class="bbtns" style="width: 100%; border: none; cursor: pointer;">Submit Proposal</button>
+    </form>
+    <p class="text-bottom" style="font-size: 12px;">I'll get back to you within 24 hours</p>
+</div>
