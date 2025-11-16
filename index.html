@@ -20,9 +20,12 @@
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/custom-styles.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 </head>
 
 <body>
+	
 
 	<!--================Header Menu Area =================-->
 	<header class="header_area">
@@ -383,6 +386,10 @@
 			</div>
 		</div>
 	</div>
+	<div id="mapBox" class="mapBox" data-lat="24.987998" data-lon="67.034043" data-zoom="15"
+		data-info="Karachi, Pakistan" data-mlat="24.987998" data-mlon="67.034043">
+	</div>
+
 	<!--================ End Testimonial Area =================-->
 
 	<!--================ Start Project Proposal Area =================-->
@@ -442,6 +449,7 @@
 			</div>
 		</div>
 	</section>
+
 	<!--================ End Project Proposal Area =================>
 
 	<!--================ Start Footer Area =================-->
@@ -501,6 +509,32 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+	<script>
+		// Map Initialization Script
+		const mapBox = document.getElementById('mapBox');
+		if (mapBox) {
+			const lat = parseFloat(mapBox.dataset.lat);
+			const lon = parseFloat(mapBox.dataset.lon);
+			const zoom = parseInt(mapBox.dataset.zoom);
+			const info = mapBox.dataset.info;
+			const mlat = parseFloat(mapBox.dataset.mlat);
+			const mlon = parseFloat(mapBox.dataset.mlon);
+
+			// Initialize map
+			const map = L.map('mapBox').setView([lat, lon], zoom);
+
+			// Tile layer
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 19
+			}).addTo(map);
+
+			// Marker
+			L.marker([mlat, mlon]).addTo(map).bindPopup(info).openPopup();
+		}
+	</script>
+
 </body>
 
 </html>
