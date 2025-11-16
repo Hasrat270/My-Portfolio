@@ -467,9 +467,23 @@ button:focus {
 
 @media (max-width: 680px) {
   .banner-content {
-    padding: 48px 20px;
-    background: #fff;
+    padding: 40px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     margin: 0 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .banner-content h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .banner-content h3 {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   }
 
 }
@@ -3993,5 +4007,245 @@ h6 {
     background-color: #667eea !important;
     color: #fff !important;
 }
+
+/* Mobile Responsive Styles for Blog Pages
+============================================================================================ */
+@media (max-width: 767px) {
+    /* Blog Category Area Spacing */
+    .blog_categorie_area {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .blog_categorie_area .col-lg-4 {
+        margin-bottom: 30px;
+    }
+    
+    .blog_categorie_area .col-lg-4:last-child {
+        margin-bottom: 0;
+    }
+    
+    .categories_post {
+        margin-bottom: 0;
+    }
+    
+    /* Reorder Blog Sidebar to Top on Mobile */
+    .blog_area .row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .blog_area .col-lg-8 {
+        order: 2;
+    }
+    
+    .blog_area .col-lg-4 {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    /* Blog Area Spacing */
+    .blog_area {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .blog_left_sidebar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Blog Item Spacing */
+    .blog_item {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+    
+    .blog_details {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .blog_details h2 {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 0 5px;
+    }
+    
+    .blog_details p {
+        padding: 0 5px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    /* Blog Right Sidebar */
+    .blog_right_sidebar {
+        margin-top: 40px;
+        padding: 20px 15px;
+    }
+    
+    /* Comments Area Mobile Fixes */
+    .comments-area {
+        padding: 30px 15px !important;
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .comments-area h4 {
+        font-size: 16px;
+        margin-bottom: 30px;
+        padding: 0 5px;
+    }
+    
+    .comments-area .comment-list {
+        padding-bottom: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .comments-area .comment-list.left-padding {
+        padding-left: 15px;
+    }
+    
+    .comments-area .thumb {
+        margin-right: 10px;
+    }
+    
+    .comments-area .thumb img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .comments-area .single-comment h5 {
+        font-size: 14px;
+    }
+    
+    .comments-area .single-comment .comment {
+        font-size: 13px;
+        line-height: 20px;
+    }
+    
+    /* Comment Form Mobile Fixes */
+    .comment-form {
+        padding: 30px 15px !important;
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .comment-form h4 {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .comment-form .form-group {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .comment-form .name,
+    .comment-form .email {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 15px;
+    }
+    
+    /* Blog Info Spacing */
+    .blog_info {
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .blog_info .post_tag {
+        padding-bottom: 15px;
+    }
+    
+    /* Single Post Area */
+    .single-post-area .blog_details {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .single-post-area .quotes {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 20px 15px;
+        font-size: 13px;
+        line-height: 22px;
+    }
+    
+    /* Navigation Area */
+    .navigation-area {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 40px;
+    }
+    
+    .navigation-area h4 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .navigation-area .nav-left,
+    .navigation-area .nav-right {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small devices */
+    .blog_item {
+        padding: 0 5px;
+    }
+    
+    .comments-area {
+        padding: 20px 10px !important;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .comment-form {
+        padding: 20px 10px !important;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .blog_details h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    .comments-area .comment-list.left-padding {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 414px) {
+    /* iPhone and similar devices */
+    .comments-area {
+        padding: 15px 8px !important;
+    }
+    
+    .comment-form {
+        padding: 15px 8px !important;
+    }
+    
+    .blog_details {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .single-post-area .quotes {
+        padding: 15px 10px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+/* End Mobile Responsive Styles for Blog Pages
+============================================================================================ */
 
 /*#sourceMappingURL=style.css.map */

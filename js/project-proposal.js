@@ -1,31 +1,80 @@
 /**
  * Project Proposal Form Handler
  * Manages form submissions, stores locally, and sends email notifications
- * Using Formspree for email delivery (no backend required)
  */
 
-const RECIPIENT_EMAIL = 'Hasrat3701@gmail.com';
-const FORMSPREE_FORM_ID = 'xyzopqvk'; // Pre-configured Formspree endpoint
+// Configuration
+const CONFIG = {
+    recipientEmail: 'Hasrat3701@gmail.com',
+    storageKey: 'project_proposals',
+    successMessageDuration: 5000,
+    mailtoDelay: 500
+};
 
-document.addEventListener('DOMContentLoaded', function() {
+/**
+ * Initialize form handlers
+ */
+function initializeFormHandlers() {
     const forms = document.querySelectorAll('#projectProposalForm');
-    
     forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            handleProjectProposal(this);
-        });
+        form.addEventListener('submit', handleFormSubmit);
     });
-});
+}
 
-function handleProjectProposal(form) {
-    const projectName = document.getElementById('projectName').value;
-    const projectEmail = document.getElementById('projectEmail').value;
-    const projectDescription = document.getElementById('projectDescription').value;
-    const projectTimeline = document.getElementById('projectTimeline').value;
-    const projectBudget = document.getElementById('projectBudget').value;
-    const projectPhone = document.getElementById('projectPhone').value;
-    const timestamp = new Date().toLocaleString();
+/**
+ * Handle form submission
+ */
+function handleFormSubmit(e) {
+    e.preventDefault();
+    const formData = getFormData();
+    
+    if (!validateFormData(formData)) {
+        showErrorMessage(this, 'Please fill in all required fields.');
+        return;
+    }
+    
+    saveProposal(formData);
+    sendEmailViaMailto(formData);
+    showSuccessMessage(this);
+    this.reset();
+}
+
+/**
+ * Get form data
+ */
+function getFormData() {
+    return {
+        projectName: getElementValue('projectName'),
+        projectEmail: getElementValue('projectEmail'),
+        projectDescription: getElementValue('projectDescription'),
+        projectTimeline: getElementValue('projectTimeline'),
+        projectBudget: getElementValue('projectBudget'),
+        projectPhone: getElementValue('projectPhone'),
+        timestamp: new Date().toLocaleString(),
+        id: Date.now()
+    };
+}
+
+/**
+ * Safely get element value
+ */
+function getElementValue(id) {
+    const element = document.getElementById(id);
+    return element ? element.value.trim() : '';
+}
+
+/**
+ * Validate form data
+ */
+function validateFormData(data) {
+    return data.projectName && data.projectEmail && data.projectDescription;
+}
+
+/**
+ * Send email via mailto
+ */
+function sendEmailViaMailto(formData) {
+    const timestamp = formData.timestamp;
 
     // Save to localStorage as backup
     const formData = {
@@ -40,111 +89,74 @@ function handleProjectProposal(form) {
     };
     saveProjectProposal(formData);
 
-    // Build a beautiful plain text email template
-    const subject = encodeURIComponent(`🚀 New Project Proposal: ${projectName}`);
+    const subject = encodeURIComponent(`🚀 New Project Proposal: ${formData.projectName}`);
     const body = encodeURIComponent(
 `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
 `   NEW PROJECT PROPOSAL\n` +
 `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-`📅 Submitted: ${timestamp}\n` +
+`📅 Submitted: ${formData.timestamp}\n` +
 `\n` +
-`👤 Name:        ${projectName}\n` +
-`✉️  Email:       ${projectEmail}\n` +
-`📞 Phone:       ${projectPhone || 'Not provided'}\n` +
-`⏳ Timeline:    ${projectTimeline}\n` +
-`💰 Budget:      ${projectBudget}\n` +
+`👤 Name:        ${formData.projectName}\n` +
+`✉️  Email:       ${formData.projectEmail}\n` +
+`📞 Phone:       ${formData.projectPhone || 'Not provided'}\n` +
+`⏳ Timeline:    ${formData.projectTimeline}\n` +
+`💰 Budget:      ${formData.projectBudget}\n` +
 `\n` +
 `📝 Project Description:\n` +
 `----------------------------------------\n` +
-`${projectDescription}\n` +
+`${formData.projectDescription}\n` +
 `----------------------------------------\n` +
 `\n` +
 `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
 `Reply directly to this email to contact the client.\n`
     );
-    const mailto = `mailto:Hasrat3701@gmail.com?subject=${subject}&body=${body}`;
-
-    // Show success message first
-    showSuccessMessage(form);
-    form.reset();
+    const mailto = `mailto:${CONFIG.recipientEmail}?subject=${subject}&body=${body}`;
     
-    // Then open mail client after a short delay
     setTimeout(() => {
         window.location.href = mailto;
-    }, 500);
-}
-
-function saveProjectProposal(proposal) {
-    let proposals = JSON.parse(localStorage.getItem('project_proposals') || '[]');
-    proposals.push(proposal);
-    localStorage.setItem('project_proposals', JSON.stringify(proposals));
-    console.log('Proposal saved:', proposal);
-}
-
-function showSuccessMessage(form) {
-    // Create success message
-    const successMsg = document.createElement('div');
-    successMsg.className = 'alert alert-success';
-    successMsg.style.cssText = 'margin: 15px 0; padding: 12px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;';
-    successMsg.textContent = '✓ Thank you! Your proposal has been received. I\'ll contact you soon!';
-    
-    form.parentNode.insertBefore(successMsg, form.nextSibling);
-    
-    // Remove message after 5 seconds
-    setTimeout(() => {
-        successMsg.remove();
-    }, 5000);
-}
-
-function showLoadingMessage(form) {
-    // Create loading message
-    const loadingMsg = document.createElement('div');
-    loadingMsg.className = 'alert alert-info';
-    loadingMsg.id = 'loadingMessage';
-    loadingMsg.style.cssText = 'margin: 15px 0; padding: 12px; background-color: #d1ecf1; border: 1px solid #bee5eb; border-radius: 4px; color: #0c5460;';
-    loadingMsg.textContent = '⏳ Sending your proposal...';
-    
-    form.parentNode.insertBefore(loadingMsg, form.nextSibling);
-}
-
-function removeLoadingMessage() {
-    const loadingMsg = document.getElementById('loadingMessage');
-    if (loadingMsg) {
-        loadingMsg.remove();
-    }
+    }, CONFIG.mailtoDelay);
 }
 
 /**
- * Send email notification via Formspree
+ * Save proposal to localStorage
  */
-// sendEmailNotification removed (mailto is now used)
-
-function showErrorMessage(form, message) {
-    const errorMsg = document.createElement('div');
-    errorMsg.className = 'alert alert-warning';
-    errorMsg.style.cssText = 'margin: 15px 0; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 4px; color: #856404;';
-    errorMsg.textContent = '⚠️ ' + message;
-    
-    form.parentNode.insertBefore(errorMsg, form.nextSibling);
-    
-    setTimeout(() => {
-        errorMsg.remove();
-    }, 5000);
+function saveProposal(proposal) {
+    let proposals = JSON.parse(localStorage.getItem(CONFIG.storageKey) || '[]');
+    proposals.push(proposal);
+    localStorage.setItem(CONFIG.storageKey, JSON.stringify(proposals));
 }
 
 /**
- * Get all saved proposals (for local backup)
+ * Show success message
+ */
+function showSuccessMessage(form) {
+    showMessage(form, 'alert-success', '✓ Thank you! Your proposal has been received. I\'ll contact you soon!');
+}
+
+/**
+ * Show error message
+ */
+function showErrorMessage(form, message) {
+    showMessage(form, 'alert-warning', '⚠️ ' + message);
+}
+
+/**
+ * Generic message display
+ */
+function showMessage(form, className, text) {
+    const msg = document.createElement('div');
+    msg.className = `alert ${className}`;
+    msg.textContent = text;
+    form.parentNode.insertBefore(msg, form.nextSibling);
+    
+    setTimeout(() => msg.remove(), CONFIG.successMessageDuration);
+}
+
+/**
+ * Get all saved proposals
  */
 function getAllProposals() {
-    return JSON.parse(localStorage.getItem('project_proposals') || '[]');
-}
-
-/**
- * Format date for display
- */
-function formatDate(isoString) {
-    const date = new Date(isoString);
-    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    return JSON.parse(localStorage.getItem(CONFIG.storageKey) || '[]');
 }
 
 /**
@@ -162,11 +174,13 @@ function exportProposals() {
 }
 
 /**
- * Clear all proposals (with confirmation)
+ * Clear all proposals
  */
 function clearAllProposals() {
     if (confirm('Are you sure you want to clear all proposals? This cannot be undone.')) {
-        localStorage.removeItem('project_proposals');
-        console.log('All proposals cleared');
+        localStorage.removeItem(CONFIG.storageKey);
     }
 }
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', initializeFormHandlers);
