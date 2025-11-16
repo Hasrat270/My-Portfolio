@@ -1,0 +1,57 @@
+/*---------------------------------------------------- */
+/* Footer Area css
+============================================================================================ */
+.footer_area {
+  background: var(--primary-color2);
+}
+
+.social_widget .f_title h4 {
+  font-size: 21px;
+  margin: 40px 0 20px;
+  color: #000;
+}
+
+.social_widget p {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.social_widget .list li {
+  margin-right: 40px;
+  display: inline-block;
+}
+
+.social_widget .list li a {
+  color: #c48e0b;
+  font-size: 36px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.social_widget .list li:last-child {
+  margin-right: 0px;
+}
+
+.social_widget .list li:hover a {
+  color: var(--primary-color);
+}
+
+.copyright {
+  margin-top: 40px;
+}
+
+.copyright p {
+  color: #000;
+}
+
+.copyright p a {
+  color: var(--primary-color);
+}
+
+/* End Footer Area css
+============================================================================================ */
