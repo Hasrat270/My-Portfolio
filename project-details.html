@@ -41,11 +41,12 @@
 						<ul class="nav navbar-nav menu_nav justify-content-end">
 							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-						<li class="nav-item submenu dropdown active">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio</a>
-							<ul class="dropdown-menu">
-									<li class="nav-item "><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-									<li class="nav-item"><a class="nav-link" href="project-details.html">Project
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+									aria-haspopup="true" aria-expanded="false">Portfolio</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+									<li class="nav-item"><a class="nav-link" href="project-details.html">Portrfolio
 											Details</a>
 								</ul>
 							</li>
@@ -79,7 +80,7 @@
 		<div class="banner_inner d-flex align-items-center">
 			<div class="container">
 				<div class="banner_content text-right">
-					<h1 id="project-title-banner">Project Details</h1>
+					<h1 id="project-title-banner">Portfolio Details</h1>
 					<div class="page_link">
 						<a href="index.html">Home</a>
 						<a href="portfolio.html">Portfolio</a>
@@ -92,47 +93,146 @@
 	<!--================ End Portfolio Banner Area =================-->
 
 	<!--================ Start Portfolio Details Area =================-->
-	<section class="portfolio_details_area section_gap">
+	<!--================ Start Portfolio Purpose Area =================-->
+	<!-- Purpose section with a big red drop-cap "T" -->
+	<section class="section_gap portfolio_purpose_area">
+		<style>
+			/* Clean dropcap with tighter spacing */
+			.purpose-text {
+				text-align: justify;
+				line-height: 1.6;
+			}
+
+			.dropcap {
+				color: #e53935;
+				float: left;
+				font-size: 4.6rem;
+				line-height: 0.95;
+				padding-right: 10px;
+				font-weight: 700;
+			}
+
+			/* Mobile fix */
+			@media (max-width: 480px) {
+				.dropcap {
+					font-size: 2.2rem;
+					padding-right: 6px;
+				}
+			}
+		</style>
+
 		<div class="container">
-			<div class="portfolio_details_inner">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="left_img">
-							<img class="img-fluid" id="project-image" src="assets/img/works/project-details-1.jpg" alt="">
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="portfolio_right_text">
-							<h4 id="project-title">Project Title</h4>
-							<p id="project-description">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-								nisi ut aliquip
-								ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu
-								fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-								qui officia
-								deserunt mollit anim id est laborum.
-							</p>
-							<ul class="list">
-								<li><span>Client</span>: <span id="project-client">Envato</span></li>
-								<li><span>Date</span>: <span id="project-date">27 February, 2018</span></li>
-								<li><span>Website</span>: <a href="#" id="project-website">colorlib.com</a></li>
-								<li><span>Category</span>: <span id="project-category">Web Design</span></li>
-								<!-- Rating for special projects -->
-								<li id="project-rating-container" style="display: none;"><span>Rating</span>: <span id="project-rating"></span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- Detailed content for complex projects -->
-				<div id="project-detailed-content" style="display: none;">
-					<!-- Content will be dynamically inserted here for projects like movie app -->
+			<div class="row">
+				<div class="col-md-12">
+
+					<h4>Purpose of My Portfolio</h4>
+
+					<p class="purpose-text">
+						<span class="dropcap">T</span>his portfolio is created to showcase my real-world projects,
+						highlight my technical skills,
+						and demonstrate how I solve practical problems through clean and efficient development.
+						It serves as a professional space where clients, recruiters, and collaborators can
+						understand the quality of my work, my development process, and the impact of the
+						solutions I build.
+					</p>
+
+					<p class="purpose-text">
+						My goal with this portfolio is to present my growth as a developer, build trust through
+						transparency, and open opportunities for meaningful projects, internships, and
+						collaborations.
+					</p>
+
 				</div>
 			</div>
 		</div>
 	</section>
+
+
+	<!--================ End Portfolio Purpose Area =================-->
+
+	<!--================ Start Skills Area =================-->
+	<section class="section_gap skills_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 text-center">
+					<div class="main-title">
+						<h1>My Skills</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row skills_inner">
+				<div class="col-lg-4 col-md-6">
+					<div class="skill_item">
+
+						<h4><i class="fa fa-code"></i> Programming Languages</h4>
+						<ul>
+							<li>JavaScript</li>
+							<li>Python</li>
+							<li>TypeScript</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="skill_item">
+
+						<h4><i class="fa fa-laptop"></i> Frameworks & Libraries</h4>
+						<ul>
+							<li>React</li>
+							<li>Node.js</li>
+							<li>Express.js</li>
+							<li>Redux</li>
+							<li>Bootstrap</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="skill_item">
+
+						<h4><i class="fa fa-database"></i> Databases</h4>
+						<ul>
+							<li>MongoDB</li>
+							<li>MySQL</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="skill_item">
+
+						<h4><i class="fa fa-wrench"></i> Tools</h4>
+						<ul>
+							<li>VS Code</li>
+							<li>Git</li>
+							<li>GitHub</li>
+							<li>Postman</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="skill_item">
+
+						<h4><i class="fa fa-cloud"></i> Cloud Platforms</h4>
+						<ul>
+							<li>Heroku</li>
+							<li>Netlify</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="skill_item">
+
+						<h4><i class="fa fa-cogs"></i> Other Skills</h4>
+						<ul>
+							<li>RESTful APIs</li>
+							<li>Responsive Design</li>
+							<li>Problem Solving</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Skills Area =================-->
+
 	<!--================ End Portfolio Details Area =================-->
 
 	<!--================Footer Area =================-->
@@ -148,11 +248,16 @@
 							<h4>Follow Me</h4>
 						</div>
 						<ul class="list">
-							<li><a href="https://www.facebook.com/hasrat.khan.35513" target="_blank"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="https://x.com/Hasrat09042872" target="_blank"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="https://www.instagram.com/hasrat_afridi_3701/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="https://www.linkedin.com/in/hasrat3701/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-							<li><a href="https://github.com/Hasrat270" target="_blank"><i class="fa fa-github"></i></a></li>
+							<li><a href="https://www.facebook.com/hasrat.khan.35513" target="_blank"><i
+										class="fa fa-facebook"></i></a></li>
+							<li><a href="https://x.com/Hasrat09042872" target="_blank"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li><a href="https://www.instagram.com/hasrat_afridi_3701/" target="_blank"><i
+										class="fa fa-instagram"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/hasrat3701/" target="_blank"><i
+										class="fa fa-linkedin"></i></a></li>
+							<li><a href="https://github.com/Hasrat270" target="_blank"><i class="fa fa-github"></i></a>
+							</li>
 						</ul>
 					</aside>
 					<div class="copyright">

@@ -41,12 +41,12 @@
 						<ul class="nav navbar-nav menu_nav justify-content-end">
 							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
-							<li class="nav-item submenu dropdown active">
+							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
 									aria-haspopup="true" aria-expanded="false">Portfolio</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item "><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio
+									<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+									<li class="nav-item"><a class="nav-link" href="project-details.html">Portrfolio
 											Details</a>
 								</ul>
 							</li>
@@ -93,91 +93,41 @@
 	<!--================ End Portfolio Banner Area =================-->
 
 	<!--================ Start Portfolio Details Area =================-->
-
-	<!--================ End Portfolio Details Area ================= -->
-
-	<!--================ Start Skills Area =================-->
-	<section class="section_gap skills_area">
+	<section class="section_gap portfolio_details_area">
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 text-center">
-					<div class="main-title">
-						<h1>My Skills</h1>
+			<div class="portfolio_details_container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="portfolio_details_img">
+							<img id="project-image" src="" alt="" class="img-fluid">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="portfolio_details_content">
+							<h4 id="project-title"></h4>
+							<p id="project-description"></p>
+							<ul class="list">
+								<li><span>Client:</span> <span id="project-client"></span></li>
+								<li><span>Date:</span> <span id="project-date"></span></li>
+								<li><span>Category:</span> <span id="project-category"></span></li>
+								<li><span>Website:</span> <a id="project-website" href="#" target="_blank"></a></li>
+							</ul>
+							<div id="project-rating-container" style="display: none;">
+								<span>Rating:</span>
+								<div id="project-rating"></div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row skills_inner">
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
-
-						<h4><i class="fa fa-code"></i> Programming Languages</h4>
-						<ul>
-							<li>JavaScript</li>
-							<li>Python</li>
-							<li>TypeScript</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
-
-						<h4><i class="fa fa-laptop"></i> Frameworks & Libraries</h4>
-						<ul>
-							<li>React</li>
-							<li>Node.js</li>
-							<li>Express.js</li>
-							<li>Redux</li>
-							<li>Bootstrap</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
-
-						<h4><i class="fa fa-database"></i> Databases</h4>
-						<ul>
-							<li>MongoDB</li>
-							<li>MySQL</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
-
-						<h4><i class="fa fa-wrench"></i> Tools</h4>
-						<ul>
-							<li>VS Code</li>
-							<li>Git</li>
-							<li>GitHub</li>
-							<li>Postman</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
-
-						<h4><i class="fa fa-cloud"></i> Cloud Platforms</h4>
-						<ul>
-							<li>Heroku</li>
-							<li>Netlify</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
-
-						<h4><i class="fa fa-cogs"></i> Other Skills</h4>
-						<ul>
-							<li>RESTful APIs</li>
-							<li>Responsive Design</li>
-							<li>Problem Solving</li>
-						</ul>
-					</div>
+				<div id="project-detailed-content" style="display: none;">
+					<!-- Detailed content will be inserted here -->
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--================ End Skills Area =================-->
+	<!--================ End Portfolio Details Area ================= -->
+
+	
 
 	<!--================Footer Area =================-->
 	<footer class="footer_area section_gap">
@@ -235,7 +185,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>
 	<script src="js/theme.js"></script>
-	<!-- <script src="js/project-details.js"></script> -->
+	<script type="module" src="js/project-details.js"></script>
 </body>
 
 </html>

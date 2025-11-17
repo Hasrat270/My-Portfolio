@@ -53,7 +53,7 @@ class ProjectManager {
         this.updateLink('project-website', project.website);
 
         // Handle special fields for movie app
-        if (project.id === 'movie-app') {
+        if (project.id === 'project1') {
             this.loadDetailedProjectContent(project);
         }
     }
@@ -243,10 +243,5 @@ class ProjectManager {
     }
 }
 
-// Create and export singleton instance
-const projectManager = new ProjectManager();
-
-// Export for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = ProjectManager;
-}
+// Export the ProjectManager class for ES6 modules
+export { ProjectManager };
