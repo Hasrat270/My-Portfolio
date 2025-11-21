@@ -170,7 +170,7 @@ const PROJECTS = [
     image: "assets/img/works/creativedirector.png",
     client: "Jony",
     date: "May 18, 2024",
-    website: "https://videographer-portfolio-hasrat.netlify.app/",
+    website: "https://creative-portfolio-hasrat.netlify.app/",
     category: "Videography, Photography",
     technologies: ["HTML5 Video", "CSS Grid", "Vanilla JavaScript"],
     features: [
