@@ -78,7 +78,7 @@ const PROJECTS = [
     image: "assets/img/works/brandon.png",
     client: "Brandon",
     date: "February 14, 2024",
-    website: "https://creative-portfolio-hasrat.netlify.app/",
+    website: "https://brandon-portfolio-hasrat.netlify.app/",
     category: "Branding, Creative Direction",
     technologies: ["HTML5", "CSS3 Animation", "Vanilla JavaScript", "ES6+"],
     features: [
