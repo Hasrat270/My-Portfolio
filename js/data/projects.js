@@ -164,13 +164,43 @@ const PROJECTS = [
   // --- 6. Jony (Videographer) - Vanilla JS ---
   {
     id: "project6",
-    title: "Jony's Lens - Videography Portfolio",
+    title: "Jony's Lens Portfolio",
     description:
       "A videography showcase for Jony. Engineered with Vanilla JavaScript to manage high-quality video backgrounds and custom media galleries efficiently.",
     image: "assets/img/works/creativedirector.png",
     client: "Jony",
     date: "May 18, 2024",
     website: "https://creative-portfolio-hasrat.netlify.app/",
+    category: "Videography, Photography",
+    technologies: ["HTML5 Video", "CSS Grid", "Vanilla JavaScript"],
+    features: [
+      "Full-Screen Video Background",
+      "Custom JS Lightbox",
+      "Masonry Photo Grid",
+      "Fast Asset Loading",
+    ],
+    rating: 5,
+    detailedDescription: `
+      <p>Video portfolios are heavy by nature, but Jony's site remains fast. It uses <strong>HTML5 Video</strong> tags controlled by <strong>Vanilla JavaScript</strong> to ensure videos play only when visible.</p>
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li><strong>Custom Lightbox:</strong> A lightweight script that opens images/videos in a modal overlay without needing external plugins.</li>
+        <li><strong>Masonry Layout:</strong> CSS Grid combined with JS calculations to create a Pinterest-style layout for photography.</li>
+        <li><strong>Lazy Loading:</strong> Native JS Intersection Observer API loads assets only as the user scrolls to them.</li>
+      </ul>
+    `,
+  },
+  // --- 7. Jony (Videographer) - Vanilla JS ---
+
+  {
+    id: "project7",
+    title: "Videography Portfolio",
+    description:
+      "A videography showcase for Jony. Engineered with Vanilla JavaScript to manage high-quality video backgrounds and custom media galleries efficiently.",
+    image: "assets/img/works/videographer.png",
+    client: "Jony",
+    date: "May 18, 2024",
+    website: "https://videographer-portfolio-hasrat.netlify.app/",
     category: "Videography, Photography",
     technologies: ["HTML5 Video", "CSS Grid", "Vanilla JavaScript"],
     features: [
