@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="vendors/linericon/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
@@ -18,6 +19,40 @@
 	<link rel="stylesheet" href="vendors/flaticon/flaticon.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/skills-center.css">
+
+	<!-- Add this CSS in the <head> section -->
+	<style>
+		/* Clean dropcap with tighter spacing */
+		.purpose-text {
+			text-align: justify;
+			line-height: 1.6;
+		}
+
+		.dropcap {
+			color: #e53935;
+			float: left;
+			font-size: 4.6rem;
+			line-height: 0.95;
+			padding-right: 10px;
+			font-weight: 700;
+		}
+
+		/* Mobile fix */
+		@media (max-width: 480px) {
+			.dropcap {
+				font-size: 2.2rem;
+				padding-right: 6px;
+			}
+		}
+
+		.skill-icon-img {
+			width: 32px;
+			height: 32px;
+			margin-right: 8px;
+			object-fit: contain;
+		}
+	</style>
 </head>
 
 <body>
@@ -96,30 +131,6 @@
 	<!--================ Start Portfolio Purpose Area =================-->
 	<!-- Purpose section with a big red drop-cap "T" -->
 	<section class="section_gap portfolio_purpose_area">
-		<style>
-			/* Clean dropcap with tighter spacing */
-			.purpose-text {
-				text-align: justify;
-				line-height: 1.6;
-			}
-
-			.dropcap {
-				color: #e53935;
-				float: left;
-				font-size: 4.6rem;
-				line-height: 0.95;
-				padding-right: 10px;
-				font-weight: 700;
-			}
-
-			/* Mobile fix */
-			@media (max-width: 480px) {
-				.dropcap {
-					font-size: 2.2rem;
-					padding-right: 6px;
-				}
-			}
-		</style>
 
 		<div class="container">
 			<div class="row">
@@ -151,81 +162,116 @@
 	<!--================ End Portfolio Purpose Area =================-->
 
 	<!--================ Start Skills Area =================-->
-	<section class="section_gap skills_area">
+	<section class="skills_area section_gap">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-6 text-center">
+				<div class="col-lg-8">
 					<div class="main-title">
-						<h1>My Skills</h1>
+						<h1>Skills & Technologies</h1>
 					</div>
 				</div>
 			</div>
-			<div class="row skills_inner">
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="skills_inner">
+						<!-- React -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+									alt="React" class="skill-icon-img"> React</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> Components & Hooks</li>
+								<li><i class="fas fa-check-circle"></i> State Management</li>
+								<li><i class="fas fa-check-circle"></i> React Router</li>
+							</ul>
+						</div>
 
-						<h4><i class="fa fa-code"></i> Programming Languages</h4>
-						<ul>
-							<li>JavaScript</li>
-							<li>Python</li>
-							<li>TypeScript</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
+						<!-- JavaScript -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+									alt="JavaScript" class="skill-icon-img"> JavaScript</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> ES6+</li>
+								<li><i class="fas fa-check-circle"></i> Async/Await</li>
+								<li><i class="fas fa-check-circle"></i> DOM Manipulation</li>
+							</ul>
+						</div>
 
-						<h4><i class="fa fa-laptop"></i> Frameworks & Libraries</h4>
-						<ul>
-							<li>React</li>
-							<li>Node.js</li>
-							<li>Express.js</li>
-							<li>Redux</li>
-							<li>Bootstrap</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
+						<!-- Node.js -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+									alt="Node.js" class="skill-icon-img"> Node.js</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> Server Development</li>
+								<li><i class="fas fa-check-circle"></i> Middleware</li>
+								<li><i class="fas fa-check-circle"></i> npm Packages</li>
+							</ul>
+						</div>
 
-						<h4><i class="fa fa-database"></i> Databases</h4>
-						<ul>
-							<li>MongoDB</li>
-							<li>MySQL</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
+						<!-- MongoDB -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+									alt="MongoDB" class="skill-icon-img"> MongoDB</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> Database Design</li>
+								<li><i class="fas fa-check-circle"></i> CRUD Operations</li>
+								<li><i class="fas fa-check-circle"></i> Aggregation</li>
+							</ul>
+						</div>
 
-						<h4><i class="fa fa-wrench"></i> Tools</h4>
-						<ul>
-							<li>VS Code</li>
-							<li>Git</li>
-							<li>GitHub</li>
-							<li>Postman</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
+						<!-- Express.js -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+									alt="Express.js" class="skill-icon-img"> Express.js</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> REST APIs</li>
+								<li><i class="fas fa-check-circle"></i> Routing</li>
+								<li><i class="fas fa-check-circle"></i> Authentication</li>
+							</ul>
+						</div>
 
-						<h4><i class="fa fa-cloud"></i> Cloud Platforms</h4>
-						<ul>
-							<li>Heroku</li>
-							<li>Netlify</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="skill_item">
+						<!-- REST APIs -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
+									alt="REST APIs" class="skill-icon-img"> REST APIs</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> API Design</li>
+								<li><i class="fas fa-check-circle"></i> HTTP Methods</li>
+								<li><i class="fas fa-check-circle"></i> Error Handling</li>
+							</ul>
+						</div>
 
-						<h4><i class="fa fa-cogs"></i> Other Skills</h4>
-						<ul>
-							<li>RESTful APIs</li>
-							<li>Responsive Design</li>
-							<li>Problem Solving</li>
-						</ul>
+						<!-- HTML -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+									alt="HTML" class="skill-icon-img"> HTML</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> Semantic HTML</li>
+								<li><i class="fas fa-check-circle"></i> Accessibility</li>
+								<li><i class="fas fa-check-circle"></i> Forms & Validation</li>
+							</ul>
+						</div>
+
+						<!-- CSS -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
+									alt="CSS" class="skill-icon-img"> CSS</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> Flexbox & Grid</li>
+								<li><i class="fas fa-check-circle"></i> Responsive Design</li>
+								<li><i class="fas fa-check-circle"></i> Animations</li>
+							</ul>
+						</div>
+
+						<!-- Git -->
+						<div class="skill_item">
+							<h4><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
+									alt="Git" class="skill-icon-img"> Git</h4>
+							<ul>
+								<li><i class="fas fa-check-circle"></i> Version Control</li>
+								<li><i class="fas fa-check-circle"></i> Branching</li>
+								<li><i class="fas fa-check-circle"></i> Collaboration</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
