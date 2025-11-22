@@ -8715,3 +8715,32 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: auto;
 }
+
+.section_gap img {
+  border-radius: 8px;
+}
+
+.section_gap h4 {
+  font-size: 24px;
+}
+#project-rating i.fa.fa-star {
+  color: goldenrod;
+}
+
+#project-detailed-content {
+  margin-top: 20px;
+}
+
+#project-detailed-content p::before {
+  content: "✔️ ";
+}
+
+#project-detailed-content p {
+  font-size: 18px;
+}
+
+#project-detailed-content strong {
+  font-size: 16px;
+  color: #d94234;
+  border-bottom: 2px solid #e1d608;
+}
