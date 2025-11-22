@@ -5,7 +5,7 @@ const PROJECTS = [
     title: "React Movie Discovery App",
     description:
       "A modern React-based movie discovery web application that allows users to explore, search, and discover millions of movies effortlessly...",
-    image: "assets/img/works/react_1.png",
+    image: "img/works/react_1.png",
     client: "Portfolio Project",
     date: "August 17, 2018",
     website: "https://hasrat-portfolio.netlify.app",
@@ -44,7 +44,7 @@ const PROJECTS = [
     title: "Sruthi - UI/UX Design Portfolio",
     description:
       "A clean, user-centric portfolio designed for Sruthi. Built with semantic HTML and Vanilla JavaScript to ensure maximum accessibility and fast load times without heavy frameworks.",
-    image: "assets/img/works/uiux.png",
+    image: "img/works/uiux.png",
     client: "Sruthi",
     date: "January 10, 2024",
     website: "https://uiux-portfolio-hasrat.netlify.app/",
@@ -75,7 +75,7 @@ const PROJECTS = [
     title: "Brandon - Creative Studio",
     description:
       "A high-impact creative portfolio for Brandon. This project utilizes pure JavaScript to drive scroll interactions and animations, avoiding the overhead of dependencies.",
-    image: "assets/img/works/brandon.png",
+    image: "img/works/brandon.png",
     client: "Brandon",
     date: "February 14, 2024",
     website: "https://brandon-portfolio-hasrat.netlify.app/",
@@ -106,7 +106,7 @@ const PROJECTS = [
     title: "Luther - Personal Identity Site",
     description:
       "A professional digital identity for Luther. Built on a solid foundation of Vanilla JS and Bootstrap, serving as a performant, responsive, and reliable business card.",
-    image: "assets/img/works/luther.png",
+    image: "img/works/luther.png",
     client: "Luther",
     date: "March 05, 2024",
     website: "https://luther-portfolio-hasrat.netlify.app/",
@@ -136,7 +136,7 @@ const PROJECTS = [
     title: "Meyawo - Digital Resume",
     description:
       "A sleek digital resume for Meyawo. This single-page application relies on Vanilla JavaScript for smooth scrolling navigation and dynamic content rendering.",
-    image: "assets/img/works/meyawo.png",
+    image: "img/works/meyawo.png",
     client: "Meyawo",
     date: "April 22, 2024",
     website: "https://meyawo-portfolio-hasrat.netlify.app/",
@@ -167,7 +167,7 @@ const PROJECTS = [
     title: "Jony's Lens Portfolio",
     description:
       "A videography showcase for Jony. Engineered with Vanilla JavaScript to manage high-quality video backgrounds and custom media galleries efficiently.",
-    image: "assets/img/works/creativedirector.png",
+    image: "img/works/creativedirector.png",
     client: "Jony",
     date: "May 18, 2024",
     website: "https://creative-portfolio-hasrat.netlify.app/",
@@ -197,7 +197,7 @@ const PROJECTS = [
     title: "Videography Portfolio",
     description:
       "A videography showcase for Jony. Engineered with Vanilla JavaScript to manage high-quality video backgrounds and custom media galleries efficiently.",
-    image: "assets/img/works/videographer.png",
+    image: "img/works/videographer.png",
     client: "Jony",
     date: "May 18, 2024",
     website: "https://videographer-portfolio-hasrat.netlify.app/",

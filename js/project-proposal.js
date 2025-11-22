@@ -76,25 +76,12 @@ function validateFormData(data) {
 function sendEmailViaMailto(formData) {
     const timestamp = formData.timestamp;
 
-    // Save to localStorage as backup
-    const formData = {
-        projectName,
-        projectEmail,
-        projectDescription,
-        projectTimeline,
-        projectBudget,
-        projectPhone,
-        timestamp,
-        id: Date.now()
-    };
-    saveProjectProposal(formData);
-
     const subject = encodeURIComponent(`🚀 New Project Proposal: ${formData.projectName}`);
     const body = encodeURIComponent(
 `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
 `   NEW PROJECT PROPOSAL\n` +
 `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
-`📅 Submitted: ${formData.timestamp}\n` +
+`📅 Submitted: ${timestamp}\n` +
 `\n` +
 `👤 Name:        ${formData.projectName}\n` +
 `✉️  Email:       ${formData.projectEmail}\n` +
